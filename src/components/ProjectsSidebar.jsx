@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 const ProjectsSidebar = () => {
   return (
@@ -7,11 +8,9 @@ const ProjectsSidebar = () => {
         Your Projects
       </h2>
       <div className="space-y-6">
-        <button
-          className="w-full px-5 py-3 text-sm font-semibold tracking-wide rounded-lg bg-stone-700 text-stone-50 hover:bg-stone-800 focus:ring-4 focus:ring-stone-300 focus:outline-none transition duration-300 ease-in-out md:text-base"
-        >
+        <Button>
           + Add Project
-        </button>
+        </Button>
         <ul className="space-y-4">
           <li className="flex items-center justify-between bg-stone-100 px-4 py-3 rounded-lg shadow-sm hover:shadow-md transition duration-300 ease-in-out">
             <span className="text-sm font-medium text-stone-700">Project Alpha</span>
