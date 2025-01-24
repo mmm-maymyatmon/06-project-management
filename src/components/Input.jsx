@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
 const classes = `
   w-full p-2 border rounded-md 
@@ -13,26 +13,17 @@ const labelClasses = `
   tracking-wide
 `;
 
-const Input = ({ label, textarea, ...props }) => {
+const Input = forwardRef(function Input({ label, textarea, ...props }, ref) {
   return (
     <div className="flex flex-col gap-2 my-4">
-      <label className={labelClasses}>
-        {label}
-      </label>
+      <label className={labelClasses}>{label}</label>
       {textarea ? (
-        <textarea
-          className={classes}
-          rows="4"
-          {...props}
-        />
+        <textarea ref={ref} className={classes} rows="4" {...props} />
       ) : (
-        <input
-          className={classes}
-          {...props}
-        />
+        <input ref={ref} className={classes} {...props} />
       )}
     </div>
   );
-};
+});
 
 export default Input;
